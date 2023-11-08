@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% block content %}
+        <!-- Page Header-->
+        <header class="masthead" style="background-image: url('   {{url_for( 'static', filename = 'assets/img/contact-bg.jpg')}} ')">
+            <div class="container position-relative px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <div class="page-heading">
+                            <h1>Create Post</h1>
+                            <span class="subheading">Share Your Story with the World</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Main Content-->
+        <main class="mb-4">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <p>Ready to Share Your Ideas? Fill out the form below and Begin Crafting Your Next Blog Post!</p>
+                        <div class="my-5">
+                        
+                            <form id="contactForm" data-sb-form-api-token="API_TOKEN", method = "POST", action = "/post_creation" >
+                                <div class="form-floating">
+                                    <input class="form-control" id="name" type="text" placeholder="Enter your name..."  name = "name" data-sb-validations="required" />
+                                    <label for="name">Author Name</label>
+                                    <div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>
+                                </div>
+                                <div class="form-floating">
+                                    <input class="form-control" id="title" type="text" placeholder="Write title of your post" name = "title" data-sb-validations="required,title" />
+                                    <label for="title">Title</label>
+                                    <div class="invalid-feedback" data-sb-feedback="title:required">An text is required.</div>
+                                    <div class="invalid-feedback" data-sb-feedback="title:email">Email is not valid.</div>
+                                </div>
+                                
+                                <div class="form-floating">
+                                    <textarea class="form-control" id="content" placeholder="Enter your content here..." name = "content" style="height: 12rem" data-sb-validations="required"></textarea>
+                                    <label for="content">Content</label>
+                                    <div class="invalid-feedback" data-sb-feedback="content:required">A message is required.</div>
+                                    
+                                </div>
+                                <div> 
+                                    <input type = "submit" class = "btn btn-primary btn-lg" value="Submit">
+                                </div>
+                                <br />
+ 
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        {% endblock %}

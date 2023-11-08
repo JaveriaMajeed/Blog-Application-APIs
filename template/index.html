@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    <!-- Page Header-->
+    <div class="row align-items-start">
+
+        <header class="masthead" style="background-image: url('           {{url_for ('static', filename = 'assets/img/blogging-stats.jpg')}}               ')">
+            <div class="container position-relative px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <div class="site-heading">
+                            <h1 style = "font-size: 50px;">Welcome to Dear Diary</h1>
+                            <span class="subheading">Explore, Engage, and Enlighten</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+    </div>
+
+    <div class="row align-items-center">
+        <h1 style = "padding-left: 80px;">Recent Posts</h1>
+        <div class="container px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-md-10 col-lg-8 col-xl-7">
+                    
+                    <ul>
+                        {% for post in posts %}
+                            <li>
+                                <h2>{{ post[0] }}</h2>  <!-- Display the title -->
+                                <p>{{ post[1] }}...</p>  <!-- Display a snippet of the content -->
+                                <p>Date: {{ post[2] }}</p>  <!-- Display the date -->
+                                <p>Posted by: {{ post[3] }}</p>  <!-- Display the author's name -->
+                                <hr>
+                
+                            </li>
+                        {% endfor %}
+
+                            
+                        <!-- Divider-->
+                        <hr class="my-4" /> 
+                    
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+        
+
+    
+
+
+
+
+
+        
+        
+{% endblock %}
+

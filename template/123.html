@@ -1,0 +1,133 @@
+<div class="container px-4 px-lg-5">
+    <div class="row gx-4 gx-lg-5 justify-content-center">
+        <div class="col-md-10 col-lg-8 col-xl-7">
+            <!-- Post preview-->
+            <div class="post-preview">
+                <a href="post.html">
+                    <h2 class="post-title">Man must explore, and this is exploration at its greatest</h2>
+                    <h3 class="post-subtitle">Problems look mighty small from 150 miles up</h3>
+                </a>
+                <p class="post-meta">
+                    Posted by
+                    <a href="#!">Start Bootstrap</a>
+                    on September 24, 2023
+                </p>
+            </div>
+            <!-- Divider-->
+            <hr class="my-4" />
+            <!-- Post preview-->
+            <div class="post-preview">
+                <a href="post.html"><h2 class="post-title">I believe every human has a finite number of heartbeats. I don't intend to waste any of mine.</h2></a>
+                <p class="post-meta">
+                    Posted by
+                    <a href="#!">Start Bootstrap</a>
+                    on September 18, 2023
+                </p>
+            </div>
+            <!-- Divider-->
+            <hr class="my-4" />
+            <!-- Post preview-->
+            <div class="post-preview">
+                <a href="post.html">
+                    <h2 class="post-title">Science has not yet mastered prophecy</h2>
+                    <h3 class="post-subtitle">We predict too much for the next year and yet far too little for the next ten.</h3>
+                </a>
+                <p class="post-meta">
+                    Posted by
+                    <a href="#!">Start Bootstrap</a>
+                    on August 24, 2023
+                </p>
+            </div>
+            <!-- Divider-->
+            <hr class="my-4" />
+            <!-- Post preview-->
+            <div class="post-preview">
+                <a href="post.html">
+                    <h2 class="post-title">Failure is not an option</h2>
+                    <h3 class="post-subtitle">Many say exploration is part of our destiny, but it’s actually our duty to future generations.</h3>
+                </a>
+                <p class="post-meta">
+                    Posted by
+                    <a href="#!">Start Bootstrap</a>
+                    on July 8, 2023
+                </p>
+            </div>
+            <!-- Divider-->
+            <hr class="my-4" />
+            <!-- Pager-->
+            <div class="d-flex justify-content-end mb-4"><a class="btn btn-primary text-uppercase" href="#!">Older Posts →</a></div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+<div class="row align-items-end">
+    <div class="container px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-md-10 col-lg-8 col-xl-7">
+                <div class="d-flex justify-content-end mb-4"><button class="btn btn-primary text-uppercase" id="showCommentForm">Add Comment→</button></div>
+                    <div id="commentForm" class="hidden">
+                        <form   method = "POST", action = "/post_comment" >
+                        <!-- Comment form fields -->
+                        <label> username</label><br>
+                        <input type = "text" class = "form-control" cols="50" name = "name"><br>
+                        <textarea placeholder="Enter your comment" rows="4" cols="50" name = "comment"></textarea>
+                        <button type="submit">Submit</button>
+                        </form>
+
+                        </div>
+                            <h2>Comments</h2>
+                            {% for comment in comment %}
+                            <div class = "container">
+                                <p>{{ comment[0] }}...</p>
+                                <p> Comment by: {{ comment[1] }} </p> 
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+<div class="container px-4 px-lg-5">
+    <div class="row gx-4 gx-lg-5 justify-content-center">
+        <div class="col-md-10 col-lg-8 col-xl-7">
+            <form id="contactForm" data-sb-form-api-token="API_TOKEN", method = "GET" >
+                <div class="form-floating">
+                    <input class="form-control" id="name" type="text" placeholder="Enter your name..."  name = "name" data-sb-validations="required" />
+                    <label for="name">Author Name</label>
+                    <div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>
+                </div>
+                <div class="form-floating">
+                    <input class="form-control" id="title" type="text" placeholder="Write title of your post" name = "title" data-sb-validations="required,title" />
+                    <label for="title">Title</label>
+                    <div class="invalid-feedback" data-sb-feedback="title:required">An text is required.</div>
+                    <div class="invalid-feedback" data-sb-feedback="title:email">Email is not valid.</div>
+                </div>
+                
+                <div class="form-floating">
+                    <textarea class="form-control" id="content" placeholder="Enter your content here..." name = "content" style="height: 12rem" data-sb-validations="required"></textarea>
+                    <label for="content">Content</label>
+                    <div class="invalid-feedback" data-sb-feedback="content:required">A message is required.</div>
+                    
+                </div>
+
+        </div>
+
+    </div>
+</div>

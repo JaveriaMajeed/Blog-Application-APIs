@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% block content %}
+        <!-- Page Header-->
+        <header class="masthead" style="background-image: url('  {{url_for( 'static', filename =  'assets/img/about-bg.jpg')}}')">
+            <div class="container position-relative px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <div class="page-heading">
+                            <h1>Comments</h1>
+                            <span class="subheading">What do you think?</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Main Content-->
+        <div class="row align-items-end">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <div class="d-flex justify-content-end mb-4"><button class="btn btn-primary text-uppercase" id="showCommentForm">Add Comment→</button></div>
+                            <div id="commentForm" class="hidden">
+                                <form   method = "POST", action = "/post_comment" >
+                                <!-- Comment form fields -->
+                                <label> username</label><br>
+                                <input type = "text" class = "form-control" cols="50" name = "name"><br>
+                                <textarea placeholder="Enter your comment" rows="4" cols="50" name = "comment"></textarea>
+                                <button type="submit">Submit</button>
+                                </form>
+    
+                                </div>
+                                    <h2>Comments</h2>
+                                    {% for comment in comment %}
+                                    <div class = "container">
+                                        <p>{{ comment[0] }}...</p>
+                                        <p> Comment by: {{ comment[1] }} </p> 
+                                        <hr>
+                                    </div>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        {% endblock %}
